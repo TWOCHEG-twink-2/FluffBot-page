@@ -51,15 +51,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
         bubbleImage.addEventListener('click', () => {
             clickCount++;
-            
-            // проигрывание случайного звука
-            const randomSound = sounds[Math.floor(Math.random() * sounds.length)];
-            const audio = new Audio(randomSound);
-            audio.play();
 
             if (clickCount >= 3) {
                 bubbleFooter.classList.add('hidden');
             }
+
+            // проигрывание случайного звука
+            const randomSound = sounds[Math.floor(Math.random() * sounds.length)];
+            const audio = new Audio(randomSound);
+            audio.play();
         });
     });
 });
