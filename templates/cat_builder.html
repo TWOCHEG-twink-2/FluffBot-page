@@ -1,0 +1,68 @@
+<style>
+    .footer-bubble {
+        position: fixed;
+        bottom: 0;
+        right: 10px;
+        cursor: pointer;
+        position: fixed;
+    }
+
+    .bubble-image {
+        width: 300px;
+        height: 300px;
+        animation: breathe 3s ease-in-out infinite;
+        transition: transform 0.3s ease;
+    }
+    @keyframes breathe {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.05);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    .speech-bubble {
+        position: absolute;
+        top: -100px;
+        left: -10px;
+        background: white;
+        padding: 15px;
+        border-radius: 15px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        width: 200px;
+        font-family: 'Patrick Hand', cursive;
+        font-size: 16px;
+    }
+
+
+    .speech-bubble::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        right: 20px;
+        border-width: 10px 10px 0;
+        border-style: solid;
+        border-color: white transparent transparent transparent;
+    }
+
+    .footer-bubble:hover .speech-bubble {
+        opacity: 1;
+        visibility: visible;
+    }
+</style>
+
+<div class="footer-bubble">
+    <img src="../img/cat_builder.png"
+         alt="Bot Icon"
+         class="bubble-image">
+    <div class="speech-bubble">
+        Привет 👋! Вынужден сообщить что бот в активной (иногда) разработке и полноценно работать пока не может.
+    </div>
+</div>
