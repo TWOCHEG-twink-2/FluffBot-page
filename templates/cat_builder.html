@@ -1,5 +1,6 @@
 <style>
     .footer-bubble {
+        z-index: 1;
         position: fixed;
         bottom: 0;
         right: 10px;
@@ -55,6 +56,17 @@
     .footer-bubble:hover .speech-bubble {
         opacity: 1;
         visibility: visible;
+    }
+
+    @media (max-width: 480px) {
+        .bubble-image {
+            width: 100px;
+            height: 100px;
+        }
+        .speech-bubble {
+            top: -150px;
+            left: -150px;
+        }
     }
 </style>
 
