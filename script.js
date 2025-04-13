@@ -33,4 +33,19 @@ document.addEventListener('DOMContentLoaded', function () {
         floatContainer.innerHTML = data;
         document.body.appendChild(floatContainer);
     });
+
+    // Log the full URL
+    console.log("Full URL (href):", window.location.href);
+
+    // Log just the path
+    console.log("Pathname:", window.location.pathname);
+
+    // Log the origin
+    console.log("Origin:", window.location.origin);
+
+    // Log the protocol
+    console.log("Protocol:", window.location.protocol);
+
+    // Log the host
+    console.log("Host:", window.location.host);
 });
