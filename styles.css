@@ -70,7 +70,7 @@ body::after {
     background-color: rgba(255, 255, 255, 0.2);
     transition: all 0.1s ease-in-out;
     backdrop-filter: blur(10px);
-    animation: FadeAndMove 2s ease-out forwards;
+    animation: FadeAndMove 3s ease-out forwards;
 }
 .markdown-block:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -98,7 +98,7 @@ body::after {
     /* Стили для анимации появления */
     opacity: 0;
     transform: translateY(50px);
-    animation: FadeAndMove 1s ease-out forwards;
+    animation: FadeAndMove 2s ease-out forwards;
 }
 #invite_button:hover {
     background-color: rgba(155, 120, 155, 0.5);
