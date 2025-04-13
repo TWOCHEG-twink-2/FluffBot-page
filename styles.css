@@ -7,33 +7,57 @@ html {
 body {
     margin: 0;
     padding: 0;
-    min-height: 100vh; /* Use min-height: 100vh instead of height: 100% */
+    min-height: 100vh;
     width: 100%;
     font-family: 'Patrick Hand', cursive;
-    background:
-        url('img/paw.svg'),
-        linear-gradient(to bottom, rgba(255, 220, 220, 1), rgba(255, 220, 255, 1));
-    background-size: 80px 80px, 100% 100%;
-    background-repeat: round round, no-repeat;
-    background-attachment: fixed, scroll;
-    animation: movePattern 20s linear infinite;
 }
-@keyframes movePattern {
-    0% {
-        background-position: 0 0, 0 0;
-    }
-    100% {
-        background-position: 80px 80px, 0 0;
-    }
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255, 220, 220, 1), rgba(255, 220, 255, 1));
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: -1;
+    animation: fadeInBackground 2s ease-in-out forwards;
+    opacity: 0;
+}
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('img/paw.svg');
+    background-size: 80px 80px;
+    background-repeat: round;
+    background-attachment: fixed;
+    z-index: -1;
+    animation: fadeInBackground 2s ease-in-out forwards, movePattern 10s linear infinite;
+    opacity: 0;
 }
 
+@keyframes movePattern {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 80px 80px;
+    }
+}
 
 .logo-image {
     display: block;
-    margin: 0 auto; /* This is shorthand for margin: 0 top/bottom, auto left/right */
-    margin-top: 20px; /* Adds 50 pixels of space above the image */
+    margin: 0 auto;
+    margin-top: 20px;
     height: 500px;
     width: 500px;
+    animation: fadeInBackground 2s ease-in-out forwards;
+    transition: all 0.3s ease;
 }
 
 .markdown-block {
@@ -46,6 +70,7 @@ body {
     background-color: rgba(255, 255, 255, 0.2);
     transition: all 0.1s ease-in-out;
     backdrop-filter: blur(10px);
+    animation: FadeAndMove 2s ease-out forwards;
 }
 .markdown-block:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -70,6 +95,10 @@ body {
     box-sizing: border-box;
     backdrop-filter: blur(20px);
     transition: all 0.3s ease-in-out;
+    /* Стили для анимации появления */
+    opacity: 0;
+    transform: translateY(50px);
+    animation: FadeAndMove 1s ease-out forwards;
 }
 #invite_button:hover {
     background-color: rgba(155, 120, 155, 0.5);
@@ -77,10 +106,32 @@ body {
     color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+#invite_button:active {
+    font-size: 3.1rem;
+}
 
 @media (max-width: 480px) {
     .logo-image {
         height: 300px;
         width: 300px;
+    }
+}
+
+@keyframes FadeAndMove {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes fadeInBackground {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }

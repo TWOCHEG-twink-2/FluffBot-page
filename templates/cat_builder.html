@@ -5,25 +5,38 @@
         bottom: 0;
         right: 10px;
         cursor: pointer;
-        position: fixed;
+        opacity: 0;
+        transform: translateX(300%);
+        animation: slideIn 1s ease-out forwards;
+        animation-delay: 2s;
     }
 
     .bubble-image {
         width: 300px;
         height: 300px;
-        animation: breathe 3s ease-in-out infinite;
-        transition: transform 0.3s ease;
+        transition: all 0.3s ease;
+        animation: breathe 3s ease-out 1s infinite;
     }
+    .bubble-image:active {
+        width: 320px;
+        height: 320px;
+    }
+    .footer-bubble.hidden {
+        animation: removeImg 1s ease-out forwards;
+    }
+
     @keyframes breathe {
-        0% {
-            transform: scale(1);
-        }
-        50% {
-            transform: scale(1.05);
-        }
-        100% {
-            transform: scale(1);
-        }
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+    @keyframes removeImg {
+        0% { opacity: 1; transform: translateX(0); }
+        100% { opacity: 0; transform: translateX(120%); }
+    }
+    @keyframes slideIn {
+        0% { opacity: 0; transform: translateX(120%); }
+        100% { opacity: 1; transform: translateX(0); }
     }
 
     .speech-bubble {
@@ -33,7 +46,7 @@
         background: white;
         padding: 15px;
         border-radius: 15px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -42,7 +55,6 @@
         font-size: 16px;
     }
 
-
     .speech-bubble::after {
         content: '';
         position: absolute;
@@ -50,10 +62,10 @@
         right: 20px;
         border-width: 10px 10px 0;
         border-style: solid;
-        border-color: white transparent transparent transparent;
+        border-color: white transparent;
     }
 
-    .footer-bubble:hover .speech-bubble {
+    .bubble-image:hover + .speech-bubble {
         opacity: 1;
         visibility: visible;
     }
@@ -63,30 +75,26 @@
             width: 100px;
             height: 100px;
         }
+        .bubble-image:active {
+            width: 120px;
+            height: 120px;
+        }
         .speech-bubble {
             top: -150px;
             left: -150px;
         }
 
-        @keyframes breathe {ч
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-            100% {
-                transform: scale(1);
-            }
+        @keyframes breathe {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
     }
 </style>
 
 <div class="footer-bubble">
-    <img src="img/cat_builder.png"
-         alt="Bot Icon"
-         class="bubble-image">
+    <img src="img/cat_builder.png" alt="Bot Icon" class="bubble-image">
     <div class="speech-bubble">
-        Привет 👋! Вынужден сообщить что бот в активной (иногда) разработке и полноценно работать пока не может.
+        Привет 👋! Вынужден сообщить что бот в активной (иногда) разработке и полноценно работать пока не может. (кликни 3 раза чтобы убрать)
     </div>
 </div>
