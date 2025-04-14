@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // удаление кота строителя на третий клик и проигрывание звука
         const bubbleImage = document.querySelector('.bubble-image');
         const bubbleFooter = document.querySelector('.footer-bubble');
+        const cancelButton = document.querySelector('.cancel-button');
         let clickCount = 0;
 
         bubbleImage.addEventListener('click', () => {
@@ -54,12 +55,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (clickCount >= 3) {
                 bubbleFooter.classList.add('hidden');
+                cancelButton.classList.add('show');
             }
 
             // проигрывание случайного звука
             const randomSound = sounds[Math.floor(Math.random() * sounds.length)];
             const audio = new Audio(randomSound);
             audio.play();
+        });
+        cancelButton.addEventListener('click', () => {
+            bubbleFooter.classList.remove('hidden');
+            cancelButton.classList.remove('show');
+            clickCount = 0;
         });
     });
 
