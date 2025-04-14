@@ -68,7 +68,7 @@ body::after {
     padding: 10px;
     margin-bottom: 20px;
     background-color: rgba(255, 255, 255, 0.2);
-    transition: all 0.1s ease-in-out;
+    transition: all 0.3s ease-in-out;
     backdrop-filter: blur(10px);
     animation: FadeAndMove 3s ease-out forwards;
 }
