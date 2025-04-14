@@ -25,7 +25,7 @@
 ## слеш-команды
 `image genetare automatic1111` - основана на [sd-web-ui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) с аргументом API, все работает на моем компьютере поэтому команда работает редко
 
-`image genetare huggingface` - [InferenceClient](https://github.com/AUTOMATIC1111/stable-diffusion-webui) от [hugging face](https://huggingface.co/), тут обьястнять нечего
+`image genetare huggingface` - [InferenceAPI](https://huggingface.co/docs/inference-providers/tasks/index) от [hugging face](https://huggingface.co/), тут обьястнять нечего
 
 `image genetare gradio` - работает на [gradio](https://www.gradio.app/) с [hugging face spaces](https://huggingface.co/spaces/stabilityai/stable-diffusion-3-medium) на [sd-3-m](https://huggingface.co/stabilityai/stable-diffusion-3-medium)
 
