@@ -95,6 +95,34 @@
             color: #666;
             margin-top: 5px;
         }
+
+        @media (max-width: 480px) {
+            .contributor-name:hover {
+                text-shadow: none;
+            }
+            .footer-link:hover {
+                text-shadow: none;
+            }
+            .contributor-card:hover {
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            .contributor-card:active {
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            }
+            .footer-link:active {
+                text-shadow:
+                    1px 1px 0 rgba(0,0,0,0.1),
+                    -1px -1px 0 rgba(0,0,0,0.1),
+                    2px 2px 1px rgba(0,0,0,0.05);
+            }
+            .contributor-name:hover {
+                text-shadow:
+                    1px 1px 0 rgba(0,0,0,0.1),
+                    -1px -1px 0 rgba(0,0,0,0.1),
+                    2px 2px 1px rgba(0,0,0,0.05);
+            }
+        }
     </style>
 
     <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">

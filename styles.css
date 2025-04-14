@@ -73,7 +73,7 @@ body::after {
     animation: FadeAndMove 3s ease-out forwards;
 }
 .markdown-block:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 #invite_button {
@@ -93,7 +93,7 @@ body::after {
     z-index: 1;
     border-radius: 10px;
     box-sizing: border-box;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(30px);
     transition: all 0.3s ease-in-out;
     /* Стили для анимации появления (при загрузке) */
     opacity: 0;
@@ -110,13 +110,28 @@ body::after {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 #invite_button:active {
-    font-size: 3.1rem;
+    filter: brightness(0.8);
 }
 
 @media (max-width: 480px) {
     .logo-image {
         height: 300px;
         width: 300px;
+    }
+
+    .markdown-block:hover {
+        box-shadow: none;
+    }
+    .markdown-block:active {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    #invite_button:hover {
+        background-color: rgba(255, 220, 255, 0.5);
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        color: black;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* отключение эффектов */
     }
 }
 

@@ -19,6 +19,9 @@
     .cancel-button.show {
         opacity: 1;
     }
+    .cancel-button:hover {
+        filter: brightness(0.8);
+    }
 
     .footer-bubble {
         z-index: 1;
@@ -101,6 +104,12 @@
         .speech-bubble {
             top: -170px;
             left: -140px;
+        }
+        .cancel-button:hover {
+            filter: none; /* заглушка (отключение эффекта) */
+        }
+        .cancel-button:active {
+            filter: brightness(0.8);
         }
 
         @keyframes breathe {
