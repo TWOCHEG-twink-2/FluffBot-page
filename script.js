@@ -1,18 +1,51 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+    // для блоков
     const folderPath = 'texts';
     const files = ['main.md', 'privacy_policy.md'];
     const contentDiv = document.getElementById('content');
-    for (let file of files) {
-        fetch(`${folderPath}/${file}`)
-            .then(response => response.text())
+    const filePromises = files.map(file => {
+        return fetch(`${folderPath}/${file}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Failed to load ${file}: ${response.status}`);
+                }
+                return response.text();
+            })
             .then(text => {
                 const html = marked.parse(text);
                 const block = document.createElement('div');
                 block.className = 'markdown-block';
                 block.innerHTML = html;
                 contentDiv.appendChild(block);
+            })
+            .catch(error => {
+                console.error(error);
+                const errorBlock = document.createElement('div');
+                errorBlock.className = 'markdown-block error';
+                errorBlock.textContent = `Error loading content: ${error.message}`;
+                contentDiv.appendChild(errorBlock);
             });
-    }
+    });
+    // ждем загрузки (асинхронность ебет мозги)
+    Promise.all(filePromises)
+        .then(() => {
+            const markdownBlocks = document.querySelectorAll('.markdown-block');
+            markdownBlocks.forEach(block => {
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            block.classList.add('visible');
+                            observer.unobserve(block);
+                        }
+                    });
+                }, { threshold: 0.1 });
+                observer.observe(block);
+            });
+        })
+        .catch(error => {
+            console.error('An error occurred while loading markdown files:', error);
+        });
 
     // Добавляем футер
     fetch('templates/footer.html')
