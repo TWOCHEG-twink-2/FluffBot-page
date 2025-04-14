@@ -120,7 +120,7 @@ body::after {
     }
 
     .markdown-block:hover {
-        box-shadow: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     .markdown-block:active {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -132,6 +132,10 @@ body::after {
         color: black;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         /* отключение эффектов */
+    }
+    #invite_button {
+        width: calc(100% - 20px);
+        margin-top: 20px;
     }
 }
 
