@@ -95,10 +95,13 @@ body::after {
     box-sizing: border-box;
     backdrop-filter: blur(20px);
     transition: all 0.3s ease-in-out;
-    /* Стили для анимации появления */
+    /* Стили для анимации появления (при загрузке) */
     opacity: 0;
     transform: translateY(50px);
     animation: FadeAndMove 2s ease-out forwards;
+}
+#invite_button.stuck {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 #invite_button:hover {
     background-color: rgba(155, 120, 155, 0.5);

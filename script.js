@@ -62,4 +62,19 @@ document.addEventListener('DOMContentLoaded', function () {
             audio.play();
         });
     });
+
+    // для анимации кнопки при прилипании
+    const button = document.getElementById('invite_button');
+    let isStuck = false;
+    function checkSticky() {
+        const rect = button.getBoundingClientRect();
+        if (rect.top <= 10 && !isStuck) {
+            button.classList.add('stuck');
+            isStuck = true;
+        } else if (rect.top > 10 && isStuck) {
+            button.classList.remove('stuck');
+            isStuck = false;
+        }
+    }
+    window.addEventListener('scroll', checkSticky);
 });
