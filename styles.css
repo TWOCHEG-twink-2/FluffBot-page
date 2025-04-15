@@ -1,9 +1,3 @@
-html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden;
-}
 body {
     margin: 0;
     padding: 0;
@@ -23,7 +17,6 @@ body::before {
     background-repeat: no-repeat;
     z-index: -1;
     animation: fadeInBackground 2s ease-in-out forwards;
-    opacity: 0;
 }
 body::after {
     content: "";
@@ -38,7 +31,6 @@ body::after {
     background-attachment: fixed;
     z-index: -1;
     animation: fadeInBackground 2s ease-in-out forwards, movePattern 10s linear infinite;
-    opacity: 0;
 }
 
 @keyframes movePattern {
