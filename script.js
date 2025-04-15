@@ -115,15 +115,19 @@ document.addEventListener('DOMContentLoaded', async function () {
     // --- анимация при прилипании кнопки ---
     function setupStickyButton() {
         const button = document.getElementById('invite_button');
+        const panel = document.querySelector('.panel');
+        console.log(panel);
         let isStuck = false;
 
         function checkSticky() {
             const rect = button.getBoundingClientRect();
             if (rect.top <= 10 && !isStuck) {
                 button.classList.add('stuck');
+                panel.classList.add('show');
                 isStuck = true;
             } else if (rect.top > 10 && isStuck) {
                 button.classList.remove('stuck');
+                panel.classList.remove('show');
                 isStuck = false;
             }
         }
@@ -151,6 +155,23 @@ document.addEventListener('DOMContentLoaded', async function () {
         });
     }
 
+    // --- размер панели ---
+    function setupPanel() {
+        function adjustPanelHeight() {
+            const panel = document.querySelector('.panel');
+            const inviteButton = document.getElementById('invite_button');
+        
+            if (panel && inviteButton) {
+                const inviteButtonRect = inviteButton.getBoundingClientRect();
+                const panelHeight = inviteButtonRect.bottom + 15;
+                panel.style.height = `${panelHeight}px`;
+            }
+        }
+        adjustPanelHeight();
+        window.addEventListener('scroll', adjustPanelHeight);
+        window.addEventListener('resize', adjustPanelHeight);
+    }
+
     // --- иницилизация ---
     await loadMarkdownContent();
     setupIntersectionObserver();
@@ -158,4 +179,5 @@ document.addEventListener('DOMContentLoaded', async function () {
     await loadCatBuilder();
     setupStickyButton();
     setupJoyCat();
+    setupPanel();
 });

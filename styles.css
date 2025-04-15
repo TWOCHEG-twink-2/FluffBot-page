@@ -42,11 +42,43 @@ body::after {
     }
 }
 
+.panel {
+    background: rgba(255, 220, 220, 0.5);
+    backdrop-filter: blur(50px);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    filter: blur(20px);
+
+    width: 100%;
+    height: 50px;
+
+    z-index: 2;
+    position: fixed;
+    top: -350px;
+
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 0 50px;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+}
+.panel.show {
+    filter: blur(0);
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s, 0s;
+    top: 0; /* вылет */
+}
+
 .joy-cat {
     width: 100%;
     height: 100%;
 
-    z-index: 3;
+    z-index: 5;
     position: fixed;
     cursor: pointer;
 
@@ -101,7 +133,7 @@ body::after {
     margin: 40px auto;
     padding: 10px 20px;
     background-color: rgba(255, 220, 255, 0.5);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
 
     color: black;
@@ -112,23 +144,20 @@ body::after {
     text-align: center;
     position: sticky;
     top: 10px;
-    z-index: 1;
+    z-index: 3;
     border-radius: 10px;
     box-sizing: border-box;
     transition: all 0.3s ease-in-out;
     /* Стили для анимации появления (при загрузке) */
     opacity: 0;
-    transform: translateY(50px);
     animation: fadeAndMove 2s ease-out forwards;
 }
 #invite_button.stuck {
-    background-color: rgba(255, 220, 255, 0.9);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 #invite_button:hover {
-    background-color: rgba(155, 120, 155, 0.9);
+    background-color: rgba(211, 175, 211, 0.9);
     color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 #invite_button:active {
     filter: brightness(0.8);
@@ -148,10 +177,8 @@ body::after {
     }
     
     #invite_button:hover {
-        background-color: rgba(255, 220, 255);
-        border: 2px solid rgba(0, 0, 0, 0.1);
+        background-color: rgba(255, 220, 255, 0.5);
         color: black;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         /* отключение эффектов */
     }
     #invite_button {
