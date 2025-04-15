@@ -116,7 +116,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     function setupStickyButton() {
         const button = document.getElementById('invite_button');
         const panel = document.querySelector('.panel');
-        console.log(panel);
         let isStuck = false;
 
         function checkSticky() {
