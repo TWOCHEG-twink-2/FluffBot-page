@@ -117,4 +117,25 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
     window.addEventListener('scroll', checkSticky);
+
+    // смешной кот
+    const logoImg = document.querySelector('.logo-image');
+    const joyCat = document.querySelector('.joy-cat');
+    let clickCount = 0;
+    logoImg.addEventListener('click', () => {
+        if (joyCat.classList.contains('show')) {
+            joyCat.classList.remove('show');
+            console.log('класс удален');
+        }
+        clickCount++;
+
+        console.log(`клик ${clickCount}`);
+
+        if (clickCount >= 3) {
+            clickCount = 0;
+            joyCat.classList.add('show');
+            console.log('сброшено');
+            new Audio('sound/udar-ot-vzgliada-skaly.mp3').play();
+        }
+    });
 });

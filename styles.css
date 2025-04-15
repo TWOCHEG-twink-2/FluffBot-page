@@ -50,6 +50,27 @@ body::after {
     }
 }
 
+.joy-cat {
+    width: 100%;
+    height: 100%;
+
+    z-index: 3;
+    position: fixed;
+    cursor: pointer;
+
+    opacity: 0;
+    display: none;
+}
+.joy-cat-image {
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+.joy-cat.show {
+    display: block;
+    animation: showAndFade 2s ease-in-out forwards;
+}
+
 .logo-image {
     display: block;
     margin: 0 auto;
@@ -77,7 +98,7 @@ body::after {
 .markdown-block.visible {
     opacity: 1;
     transform: translateY(0);
-    animation: FadeAndMove 3s ease-out forwards;
+    animation: fadeAndMove 3s ease-out forwards;
 }
 .markdown-block:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -87,7 +108,7 @@ body::after {
     display: block;
     margin: 40px auto;
     padding: 10px 20px;
-    background-color: rgba(255, 220, 255, 0.5);
+    background-color: rgba(255, 220, 255);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: black;
     font-size: 3rem;
@@ -100,19 +121,17 @@ body::after {
     z-index: 1;
     border-radius: 10px;
     box-sizing: border-box;
-    backdrop-filter: blur(30px);
     transition: all 0.3s ease-in-out;
     /* Стили для анимации появления (при загрузке) */
     opacity: 0;
     transform: translateY(50px);
-    animation: FadeAndMove 2s ease-out forwards;
+    animation: fadeAndMove 2s ease-out forwards;
 }
 #invite_button.stuck {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 #invite_button:hover {
-    background-color: rgba(155, 120, 155, 0.5);
-    border: 2px solid rgba(155, 120, 155, 0.5);
+    background-color: rgba(155, 120, 155);
     color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -127,14 +146,14 @@ body::after {
     }
 
     .markdown-block:hover {
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: none;
     }
     .markdown-block:active {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
     
     #invite_button:hover {
-        background-color: rgba(255, 220, 255, 0.5);
+        background-color: rgba(255, 220, 255);
         border: 2px solid rgba(0, 0, 0, 0.1);
         color: black;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -146,7 +165,16 @@ body::after {
     }
 }
 
-@keyframes FadeAndMove {
+@keyframes showAndFade {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+@keyframes fadeAndMove {
     0% {
         opacity: 0;
         transform: translateY(50px);
