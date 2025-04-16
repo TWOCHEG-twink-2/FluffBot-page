@@ -6,7 +6,6 @@ body {
     
     /* учесть отступ снизу, заданный браузером */
     min-height: 100dvh;
-    padding-bottom: env(safe-area-inset-bottom);
 }
 body::before {
     content: "";
@@ -35,7 +34,6 @@ body::after {
     z-index: -1;
     animation: fadeInBackground 2s ease-in-out forwards, movePattern 10s linear infinite;
 }
-
 @keyframes movePattern {
     0% {
         background-position: 0 0;
