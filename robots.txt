@@ -1,1 +1,4 @@
+User-agent: *
+Allow: /
 Sitemap: https://fluffbot.ru/sitemap.xml
+Host: https://fluffbot.ru/
