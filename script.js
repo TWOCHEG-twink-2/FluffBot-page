@@ -171,6 +171,17 @@ document.addEventListener('DOMContentLoaded', async function () {
         window.addEventListener('resize', adjustPanelHeight);
     }
 
+    // фикс ебучей панели в яндексе на телефоне
+    function resizeFix() {
+        function updateBackground() {
+            document.body.style.height = window.innerHeight + 'px';
+            document.body.style.backgroundSize = 'cover';
+            document.body.style.backgroundPosition = 'center';
+        }
+        updateBackground();
+        window.addEventListener('resize', updateBackground);
+    }
+
     // --- иницилизация ---
     await loadMarkdownContent();
     setupIntersectionObserver();
@@ -179,4 +190,5 @@ document.addEventListener('DOMContentLoaded', async function () {
     setupStickyButton();
     setupJoyCat();
     setupPanel();
+    resizeFix();
 });
