@@ -172,61 +172,61 @@ document.addEventListener('DOMContentLoaded', async function () {
     }
 
 
-    // function setupDonors() {
-    //     const donorsDiv = document.getElementById('donors');
+    function setupDonors() {
+        // ну я не ебу как спрятать токен
+        const donorsDiv = document.getElementById('donors');
 
-    //     // Загрузка данных о донатерах
-    //     fetch('https://api.donationalerts.com/v1/alerts/donations', {
-    //         headers: {
-    //             'Authorization': 'Bearer YOUR_API_KEY' // Замените YOUR_API_KEY на реальный ключ
-    //         }
-    //     })
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         if (data && data.length > 0) {
-    //             // Создаем сетку для донатеров
-    //             const grid = document.createElement('div');
-    //             grid.className = 'contributor-grid';
+        fetch('https://www.donationalerts.com/api/v1/alerts/donations', {
+            headers: {
+                'Authorization': 'Bearer хуй'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data && data.length > 0) {
+                // Создаем сетку для донатеров
+                const grid = document.createElement('div');
+                grid.className = 'contributor-grid';
 
-    //             // Для каждого донатера создаем карточку
-    //             data.forEach(donation => {
-    //                 const card = document.createElement('div');
-    //                 card.className = 'contributor-card';
+                // Для каждого донатера создаем карточку
+                data.forEach(donation => {
+                    const card = document.createElement('div');
+                    card.className = 'contributor-card';
 
-    //                 const img = document.createElement('img');
-    //                 img.src = 'default_avatar.png';
-    //                 img.alt = donation.name || 'Donor';
-    //                 img.className = 'avatar';
+                    const img = document.createElement('img');
+                    img.src = 'default_avatar.png';
+                    img.alt = donation.name || 'Donor';
+                    img.className = 'avatar';
 
-    //                 const info = document.createElement('div');
-    //                 info.className = 'contributor-info';
+                    const info = document.createElement('div');
+                    info.className = 'contributor-info';
 
-    //                 const name = document.createElement('span');
-    //                 name.className = 'contributor-name';
-    //                 name.textContent = donation.name || 'Аноним';
+                    const name = document.createElement('span');
+                    name.className = 'contributor-name';
+                    name.textContent = donation.name || 'Аноним';
 
-    //                 const desc = document.createElement('p');
-    //                 desc.className = 'contributor-description';
-    //                 desc.textContent = 'Поддержал нас!';
+                    const desc = document.createElement('p');
+                    desc.className = 'contributor-description';
+                    desc.textContent = 'Поддержал нас!';
 
-    //                 // Собираем карточку
-    //                 info.appendChild(name);
-    //                 info.appendChild(desc);
-    //                 card.appendChild(img);
-    //                 card.appendChild(info);
-    //                 grid.appendChild(card);
-    //             });
+                    // Собираем карточку
+                    info.appendChild(name);
+                    info.appendChild(desc);
+                    card.appendChild(img);
+                    card.appendChild(info);
+                    grid.appendChild(card);
+                });
 
-    //             donorsDiv.appendChild(grid);
-    //         } else {
-    //             donorsDiv.innerHTML = '<p>нас пока никто не поддержал 😥</p>';
-    //         }
-    //     })
-    //     .catch(error => {
-    //         console.error('Ошибка загрузки донатеров:', error);
-    //         donorsDiv.innerHTML = '<p>нас пока никто не поддержал 😥</p>';
-    //     });
-    // }
+                donorsDiv.appendChild(grid);
+            } else {
+                donorsDiv.innerHTML = '<p>нас пока никто не поддержал 😥</p>';
+            }
+        })
+        .catch(error => {
+            console.error('Ошибка загрузки донатеров:', error);
+            donorsDiv.innerHTML = '<p>нас пока никто не поддержал 😥</p>';
+        });
+    }
 
     // --- иницилизация ---
     await loadMarkdownContent();
