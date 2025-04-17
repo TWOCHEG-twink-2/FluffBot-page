@@ -14,11 +14,9 @@
         padding-right: 5px;
 
         transition: all 0.3s ease-in-out;
-        filter: blur(10px);
         opacity: 0;
     }
     .cancel-button.show {
-        filter: none;
         right: 10px;
         opacity: 1;
     }
@@ -57,12 +55,12 @@
         100% { transform: scale(1); }
     }
     @keyframes removeImg {
-        0% { opacity: 1; transform: translateX(0); filter: blur(0); }
-        100% { opacity: 0; transform: translateX(120%); filter: blur(10px); }
+        0% { opacity: 1; transform: translateX(0); }
+        100% { opacity: 0; transform: translateX(120%); }
     }
     @keyframes slideIn {
-        0% { opacity: 0; transform: translateX(120%); filter: blur(10px); }
-        100% { opacity: 1; transform: translateX(0); filter: blur(0); }
+        0% { opacity: 0; transform: translateX(120%); }
+        100% { opacity: 1; transform: translateX(0); }
     }
 
     .speech-bubble {
@@ -77,7 +75,7 @@
         visibility: hidden;
         transition: all 0.3s ease-in-out;
         width: 200px;
-        font-size: 1px;
+        font-size: 16px;
         filter: blur(10px);
         transform-origin: bottom right;
         pointer-events: none;
@@ -94,7 +92,6 @@
     .bubble-image:hover + .speech-bubble {
         opacity: 1;
         visibility: visible;
-        font-size: 16px;
         filter: none;
         pointer-events: auto;
     }
