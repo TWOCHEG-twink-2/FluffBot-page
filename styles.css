@@ -3,7 +3,6 @@ body {
     
     width: 100%;
     font-family: 'Patrick Hand', cursive;
-    
     /* учесть отступ снизу, заданный браузером */
     min-height: 100dvh;
 }
@@ -135,7 +134,7 @@ body::after {
     padding: 10px 20px;
     background-color: rgba(255, 220, 255, 0.5);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(30px);
 
     color: black;
     font-size: 3rem;
