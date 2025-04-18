@@ -179,4 +179,5 @@ document.addEventListener('DOMContentLoaded', async function () {
     setupStickyButton();
     setupJoyCat();
     setupPanel();
+    console.log('все негры пидоры\nой всмысле по кликай на большого котика 😘');
 });
