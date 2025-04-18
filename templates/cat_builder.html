@@ -7,17 +7,18 @@
         z-index: 1;
         position: fixed;
         bottom: 10px;
-        right: 30px;
+        right: 10px;
         border-radius: 10px;
         cursor: pointer;
         padding-left: 5px;
         padding-right: 5px;
 
         transition: all 0.3s ease-in-out;
+        visibility: hidden;
         opacity: 0;
     }
     .cancel-button.show {
-        right: 10px;
+        visibility: visible;
         opacity: 1;
     }
     .cancel-button:hover {
