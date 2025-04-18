@@ -171,17 +171,6 @@ document.addEventListener('DOMContentLoaded', async function () {
         window.addEventListener('resize', adjustPanelHeight);
     }
 
-    // --- для динамичных панелей
-    function updateVH() {
-        const height = window.visualViewport
-          ? window.visualViewport.height
-          : window.innerHeight;
-        document.documentElement.style.setProperty('--vh', `${height}px`);
-      }
-      updateVH();
-      window.addEventListener('resize',  updateVH);
-      window.addEventListener('orientationchange', updateVH);
-
     // --- иницилизация ---
     await loadMarkdownContent();
     setupIntersectionObserver();

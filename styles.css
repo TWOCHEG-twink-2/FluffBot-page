@@ -5,10 +5,11 @@ body {
 body::before {
     content: "";
     position: fixed;
+    /* бля */
     top: 0;
     left: 0;
-    width: 100%;
-    height: var(--vh);
+    right: 0;
+    bottom: 0;
     background: linear-gradient(to bottom, rgba(255, 220, 220, 1), rgba(255, 220, 255, 1));
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -18,10 +19,11 @@ body::before {
 body::after {
     content: "";
     position: fixed;
+    /* бля */
     top: 0;
     left: 0;
-    width: 100%;
-    height: var(--vh);
+    right: 0;
+    bottom: 0;
     background: url('img/paw.svg');
     background-size: 80px 80px;
     background-repeat: round;
@@ -110,7 +112,7 @@ body::after {
     margin-bottom: 20px;
     background-color: rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease-in-out;
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(20px);
     /* для анимация появления */
     opacity: 0;
     transform: translateY(10px);
@@ -130,7 +132,7 @@ body::after {
     padding: 10px 20px;
     background-color: rgba(255, 220, 255, 0.5);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(20px);
 
     color: black;
     font-size: 3rem;
