@@ -1,10 +1,6 @@
 body {
     margin: 0;
-    
-    width: 100%;
     font-family: 'Patrick Hand', cursive;
-    /* учесть отступ снизу, заданный браузером */
-    min-height: var(--vh);
 }
 body::before {
     content: "";
@@ -12,7 +8,7 @@ body::before {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: var(--vh);
     background: linear-gradient(to bottom, rgba(255, 220, 220, 1), rgba(255, 220, 255, 1));
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -25,7 +21,7 @@ body::after {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: var(--vh);
     background: url('img/paw.svg');
     background-size: 80px 80px;
     background-repeat: round;
