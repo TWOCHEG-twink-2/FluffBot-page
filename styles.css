@@ -4,7 +4,7 @@ body {
     width: 100%;
     font-family: 'Patrick Hand', cursive;
     /* учесть отступ снизу, заданный браузером */
-    min-height: 100dvh;
+    min-height: var(--vh);
 }
 body::before {
     content: "";
