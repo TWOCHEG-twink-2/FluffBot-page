@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             } catch (error) {
                 console.error(error);
                 const errorBlock = document.createElement('div');
-                errorBlock.className = 'markdown-block error';
+                errorBlock.className = 'markdown-block';
                 errorBlock.textContent = `Error loading content: ${error.message}`;
                 contentDiv.appendChild(errorBlock);
             }
