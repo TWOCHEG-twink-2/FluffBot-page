@@ -154,23 +154,6 @@ document.addEventListener('DOMContentLoaded', async function () {
         });
     }
 
-    // --- размер панели ---
-    function setupPanel() {
-        function adjustPanelHeight() {
-            const panel = document.querySelector('.panel');
-            const inviteButton = document.getElementById('invite_button');
-        
-            if (panel && inviteButton) {
-                const inviteButtonRect = inviteButton.getBoundingClientRect();
-                const panelHeight = inviteButtonRect.bottom + 15;
-                panel.style.height = `${panelHeight}px`;
-            }
-        }
-        adjustPanelHeight();
-        window.addEventListener('scroll', adjustPanelHeight);
-        window.addEventListener('resize', adjustPanelHeight);
-    }
-
     // --- иницилизация ---
     await loadMarkdownContent();
     setupIntersectionObserver();
@@ -178,6 +161,5 @@ document.addEventListener('DOMContentLoaded', async function () {
     await loadCatBuilder();
     setupStickyButton();
     setupJoyCat();
-    setupPanel();
     console.log('все негры пидоры\nой всмысле по кликай на большого котика 😘');
 });

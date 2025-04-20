@@ -5,13 +5,11 @@ body {
 body::before {
     content: "";
     position: fixed;
-    /* бля */
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: -100px;
     background: linear-gradient(to bottom, rgba(255, 220, 220, 1), rgba(255, 220, 255, 1));
-    background-size: 100% 100%;
     background-repeat: no-repeat;
     z-index: -1;
     animation: fadeInBackground 2s ease-in-out forwards;
@@ -19,11 +17,10 @@ body::before {
 body::after {
     content: "";
     position: fixed;
-    /* бля */
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: -100px;
     background: url('img/paw.svg');
     background-size: 80px 80px;
     background-repeat: round;
@@ -38,38 +35,6 @@ body::after {
     100% {
         background-position: 80px 80px;
     }
-}
-
-.panel {
-    background: rgba(255, 220, 220, 0.5);
-    backdrop-filter: blur(50px);
-    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    filter: blur(50px);
-
-    width: 100%;
-    height: 50px;
-
-    z-index: 1;
-    position: fixed;
-    top: -350px;
-
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    padding: 0 50px;
-
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.5s ease;
-}
-.panel.show {
-    filter: blur(0);
-    opacity: 1;
-    visibility: visible;
-    transition-delay: 0s, 0s;
-    top: 0; /* вылет */
 }
 
 .joy-cat {
