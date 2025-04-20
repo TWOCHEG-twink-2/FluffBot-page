@@ -95,9 +95,9 @@ body::after {
     display: block;
     margin: 40px auto;
     padding: 10px 20px;
-    background-color: rgba(255, 220, 255, 0.5);
+    background-color: rgba(255, 220, 255, 0.8);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(30px);
 
     color: black;
     font-size: 3rem;
