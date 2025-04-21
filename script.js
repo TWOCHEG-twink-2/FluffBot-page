@@ -115,18 +115,15 @@ document.addEventListener('DOMContentLoaded', async function () {
     // --- анимация при прилипании кнопки ---
     function setupStickyButton() {
         const button = document.getElementById('invite_button');
-        const panel = document.querySelector('.panel');
         let isStuck = false;
 
         function checkSticky() {
             const rect = button.getBoundingClientRect();
             if (rect.top <= 10 && !isStuck) {
                 button.classList.add('stuck');
-                panel.classList.add('show');
                 isStuck = true;
-            } else if (rect.top > 10 && isStuck) {
+            } else if (rect.top > 10 && isStuck) 
                 button.classList.remove('stuck');
-                panel.classList.remove('show');
                 isStuck = false;
             }
         }
