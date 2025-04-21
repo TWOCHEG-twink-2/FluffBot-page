@@ -96,7 +96,7 @@ body::after {
     margin: 40px auto;
     padding: 10px 20px;
     background-color: rgba(255, 220, 255, 0.8);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    
     backdrop-filter: blur(30px);
 
     color: black;
@@ -113,10 +113,10 @@ body::after {
     transition: all 0.3s ease-in-out;
     /* Стили для анимации появления (при загрузке) */
     opacity: 0;
-    animation: fadeAndMove 3s ease-out forwards;
+    animation: fadeAndMove 2s ease-out forwards;
 }
 #invite_button.stuck {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 #invite_button:hover {
     background-color: rgba(211, 175, 211, 0.9);
