@@ -85,7 +85,7 @@ body::after {
 .markdown-block.visible {
     opacity: 1;
     transform: translateY(0);
-    animation: fadeAndMove 3s ease-out forwards;
+    animation: fadeAndMove 2s ease-out forwards;
 }
 .markdown-block:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -113,7 +113,7 @@ body::after {
     transition: all 0.3s ease-in-out;
     /* Стили для анимации появления (при загрузке) */
     opacity: 0;
-    animation: fadeAndMove 2s ease-out forwards;
+    animation: fadeAndMove 1s ease-out forwards;
 }
 #invite_button.stuck {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
