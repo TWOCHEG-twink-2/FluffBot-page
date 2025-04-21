@@ -115,16 +115,13 @@ document.addEventListener('DOMContentLoaded', async function () {
     // --- анимация при прилипании кнопки ---
     function setupStickyButton() {
         const button = document.getElementById('invite_button');
-        let isStuck = false;
 
         function checkSticky() {
             const rect = button.getBoundingClientRect();
-            if (rect.top <= 10 && !isStuck) {
+            if (rect.top <= 10) {
                 button.classList.add('stuck');
-                isStuck = true;
-            } else if (rect.top > 10 && isStuck) 
+            } else {
                 button.classList.remove('stuck');
-                isStuck = false;
             }
         }
 
